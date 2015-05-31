@@ -8,6 +8,8 @@
 \ source code file and a binary
 \ executable.
 
+: <> != ;
+
 : / /MOD SWAP DROP ;
 
 : MOD /MOD DROP ;
@@ -121,7 +123,6 @@
   ;
 
 
-
 \ BEGIN cond WHILE loop REPEAT
 : WHILE IMMEDIATE
     ' 0BRANCH ,
@@ -138,7 +139,6 @@
     SWAP !
   ;
 
-
 : ( IMMEDIATE
     ')' PARSE 2DROP ;
 
@@ -151,7 +151,6 @@
     DSP@ + \ add to DSP
     @      \ fetch
   ;
-
 
 \ writes n spaces to stdout
 : SPACES ( n -- )
@@ -196,7 +195,6 @@
     REPEAT
     DROP
 ;
-
 
 : UWIDTH ( u -- width )
     BASE @ / \ rem quot
